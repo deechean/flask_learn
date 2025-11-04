@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+    </head>
+    <body>
+        <form action="/login" method="POST">
+            username <input type="text" name="username">
+            Remember Me <input type="checkbox" name="remember_me">
+            <button>Submmit</button>
+        </form>
+        
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="message">
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+        
+    </body>
+</html>
